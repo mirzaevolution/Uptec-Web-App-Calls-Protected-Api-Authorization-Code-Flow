@@ -1,0 +1,32 @@
+﻿@model IEnumerable<TodoModel>
+@{
+    ViewData["Title"] = "Todo Items";
+}
+<div class="mt-5 mx-3">
+    <a asp-action="Create" asp-controller="Todos" class="btn btn-success">Add New Item</a>
+</div>
+<div class="mt-4 mx-3">
+
+    @if (Model != null && Model.Any())
+    {
+        foreach (var item in Model)
+        {
+            <div class="card mt-4 col-12">
+                <div class="card-header bg-primary">
+                    <h3 class="card-title text-light mx-2">@item.Title</h3>
+                </div>
+                <div class="card-body">
+                    <div class="m-2"> @item.Description</div>
+                </div>
+                <div class="card-footer">
+                    <a asp-action="Edit" asp-controller="Todos"
+                       asp-route-id="@item.Id" class="btn btn-outline-primary">Edit</a>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <p>No todo item found.</p>
+    }
+</div>

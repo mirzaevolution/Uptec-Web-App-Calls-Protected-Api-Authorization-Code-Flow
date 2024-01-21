@@ -1,0 +1,65 @@
+﻿@model UptecWebAppCallsProtectedApi.Models.UpdateTodoViewModel
+
+@{
+    ViewData["Title"] = "Edit Todo Item";
+}
+
+<h2>Edit Todo Item</h2>
+<hr />
+@if(Model!=null)
+{
+    <div class="row mt-2">
+        <div class="col-md-6">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id"/>
+                <div class="form-group mb-4">
+                    <label asp-for="Title" class="control-label"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="Description" class="control-label"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-4">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index" class="btn btn-outline-info d-inline-block mr-1">
+            Back to List
+        </a>
+        <form asp-action="Delete" id="formDelete" class="d-inline-block">
+            <input type="hidden" asp-for="Id" />
+
+            <button class="btn btn-outline-danger" type="submit">
+                Delete
+            </button>
+        </form>
+    </div>
+
+}
+else
+{
+    <p class="text-danger">Invalid data. Todo item is not found</p>
+}
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        function deleteTodo(event) {
+            event.preventDefault();
+            let confirmed = window.confirm('Are you sure want to delete this data?');
+            if (confirmed) {
+                document.getElementById('formDelete').submit();
+            }
+        }
+        document.getElementById('formDelete')?.addEventListener('submit', deleteTodo)
+        
+    </script>
+}
