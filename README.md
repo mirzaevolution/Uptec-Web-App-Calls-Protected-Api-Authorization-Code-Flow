@@ -1,4 +1,4 @@
-# Auth Series #4 - Call Microsoft Entra ID/Azure AD Protected Web API via ASP.NET Core MVC using Authorization Code Flow 
+# Auth Series #5 - Call Microsoft Entra ID/Azure AD Protected Web API via ASP.NET Core MVC using Authorization Code Flow 
 
 ![2024 01 18 22H16 04](assets/2024-01-18_22h16_04.gif)
 
