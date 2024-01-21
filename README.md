@@ -511,7 +511,7 @@ We also specify complete scope names (with identifier api://....).
 Don't forget to set the base url of the TodoApi to be the same like our api has.
 
 Now, jump to **Program.cs**. Modify the file to add authentication mechanism via 
-**AddMicrosoftIdentityWebAppAuthentication**. This method will have extension methods of
+**AddMicrosoftIdentityWebAppAuthentication** OpenIdConnect - Authorization Code Flow. This method will have extension methods of
 **EnableTokenAcquisitionToCallDownstreamApi** and **AddDownstreamApi**.
 Those extension methods will register our api defined in the **appsettings.json**. 
 So, to call the api, we later just need to inject IDownstreamApi interface and call it via that interface.
