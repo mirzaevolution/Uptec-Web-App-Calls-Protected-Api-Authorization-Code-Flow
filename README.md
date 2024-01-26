@@ -25,8 +25,8 @@ Here are the requirements used in this tutorial:
 
 If you follow along our 2nd tutorial, we have created two new app registrations:
 
- - uptec-auth-api: This app registration used by our protected WeatherForecast api previously
- - uptec-auth-api-caller: This app registration used client apps to call the protected api
+ - uptec-auth-api: This app registration used by our protected api previously
+ - uptec-auth-api-caller: This app registration by used client apps to call the protected api
 
 ![2024 01 18 10H50 07](assets/2024-01-18_10h50_07.png)
 
